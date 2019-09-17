@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Bridge">
+  <ClassDiagramComponents>
+    <Class name="RSAEncryptAlgorithm" package="bridge" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="encrypt" returnType="String" visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NewEncryptAlgorithmAdaptee" package="bridge" visibility="public" xPosition="390.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="encrypt" returnType="String" visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DESEncryptAlgorithm" package="bridge" visibility="public" xPosition="770.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="encrypt" returnType="String" visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NoEncryptAlgorithm" package="bridge" visibility="public" xPosition="1142.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="encrypt" returnType="String" visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NEWEncryptAlgorithm" package="bridge" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="encriptar" returnType="String" visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="char[]" name="sustitutions"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FactoryEncryptAlgorithm" package="bridge" visibility="public" xPosition="609.0" yPosition="349.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="create" returnType="IEncryptAlgorithm" visibility="public" isStatic="true">
+          <Argument type="METODO" name="metodo"/>
+        </Method>
+        <Method name="create" returnType="IEncryptAlgorithm" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="DefaultMessageEncryptImpl" package="bridge" visibility="public" xPosition="1129.0" yPosition="191.0">
+      <Fields>
+        <Field name="encryptAlgorithm" type="IEncryptAlgorithm" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="IEncryptAlgorithm" name="encryptAlgorithm"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="encryptMessage" returnType="String" visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Bridge" package="bridge" visibility="public" xPosition="79.0" yPosition="366.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AESEncryptAlgorithm" package="bridge" visibility="public" xPosition="20.0" yPosition="208.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="encrypt" returnType="String" visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="IEncryptAlgorithm" package="bridge" visibility="public" xPosition="609.0" yPosition="208.0">
+      <Methods>
+        <Method name="encrypt" returnType="String" visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="IMessageEncrypt" package="bridge" visibility="public" xPosition="1150.0" yPosition="380.0">
+      <Methods>
+        <Method name="encryptMessage" returnType="String" visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="bridge.AESEncryptAlgorithm" target="bridge.IEncryptAlgorithm"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="bridge.DefaultMessageEncryptImpl" target="bridge.IMessageEncrypt"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="bridge.DESEncryptAlgorithm" target="bridge.IEncryptAlgorithm"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="bridge.RSAEncryptAlgorithm" target="bridge.IEncryptAlgorithm"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="bridge.NewEncryptAlgorithmAdaptee" target="bridge.IEncryptAlgorithm"/>
+    <UseRelation source="bridge.FactoryEncryptAlgorithm" target="bridge.IEncryptAlgorithm" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="encryptAlgorithm" source="bridge.DefaultMessageEncryptImpl" target="bridge.IEncryptAlgorithm" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="bridge.NoEncryptAlgorithm" target="bridge.IEncryptAlgorithm"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
