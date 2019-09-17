@@ -5,8 +5,6 @@
  */
 package bridge;
 
-import java.util.Base64;
-
 /**
  *
  * @author alexander
@@ -17,7 +15,11 @@ public class NewEncryptAlgorithmAdaptee implements IEncryptAlgorithm{
     public String encrypt(String message, String password) throws Exception {
         NEWEncryptAlgorithm newEncryptAlgorithm = new NEWEncryptAlgorithm();
         
-        return Base64.getEncoder().encodeToString(newEncryptAlgorithm.encriptar(message, password));
+        char chars[];
+        
+        chars = password.toCharArray();
+        
+        return newEncryptAlgorithm.encriptar(message, chars);
     }
     
 }

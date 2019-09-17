@@ -5,9 +5,6 @@
  */
 package bridge;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author alexander
@@ -42,7 +39,7 @@ public class Bridge {
             String messageRSA = rsaImpl.encryptMessage(message, "XMzDdG4DO3CKm2Ix");
             System.out.println("Private + public keys>" + messageRSA + '\n');
             
-            String messageNEW = newImpl.encryptMessage(message, "XMzDdG4DO3CKm2Ix");
+            String messageNEW = newImpl.encryptMessage(message, "O2B1mXc5eP");
             System.out.println("messageNEW>" + messageNEW + '\n');
             
             String messageDefault = defaultImpl.encryptMessage(message, "XMzDdG4DO3CKm2Ix");
