@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Adapter">
+  <ClassDiagramComponents>
+    <Class name="XBankCreditResponse" package="adapter" visibility="public" xPosition="20.0" yPosition="967.0">
+      <Fields>
+        <Field name="aproval" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="boolean" name="aproval"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="isAproval" returnType="boolean" visibility="public"/>
+        <Method name="setAproval" returnType="void" visibility="public">
+          <Argument type="boolean" name="aproval"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ZBankCreditRequest" package="adapter" visibility="public" xPosition="537.0" yPosition="1629.0">
+      <Fields>
+        <Field name="customerName" type="String" visibility="private"/>
+        <Field name="requestAmount" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="customerName"/>
+          <Argument type="double" name="requestAmount"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCustomerName" returnType="String" visibility="public"/>
+        <Method name="setCustomerName" returnType="void" visibility="public">
+          <Argument type="String" name="customerName"/>
+        </Method>
+        <Method name="getRequestAmount" returnType="double" visibility="public"/>
+        <Method name="setRequestAmount" returnType="void" visibility="public">
+          <Argument type="double" name="requestAmount"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ZBankCreditAPI" package="adapter" visibility="public" xPosition="484.0" yPosition="1021.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="sendCreditRequest" returnType="ZBankCreditResponse" visibility="public">
+          <Argument type="ZBankCreditRequest" name="request"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="YBankCreditApproveResult" package="adapter" visibility="public" xPosition="1858.0" yPosition="1324.0">
+      <Fields>
+        <Field name="approved" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="approved"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getApproved" returnType="String" visibility="public"/>
+        <Method name="setApproved" returnType="void" visibility="public">
+          <Argument type="String" name="approved"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BankCreditRequest" package="adapter" visibility="public" xPosition="1918.0" yPosition="78.0">
+      <Fields>
+        <Field name="customer" type="String" visibility="private"/>
+        <Field name="amount" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="customer"/>
+          <Argument type="double" name="amount"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCustomer" returnType="String" visibility="public"/>
+        <Method name="setCustomer" returnType="void" visibility="public">
+          <Argument type="String" name="customer"/>
+        </Method>
+        <Method name="getAmount" returnType="double" visibility="public"/>
+        <Method name="setAmount" returnType="void" visibility="public">
+          <Argument type="double" name="amount"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="YBankCreditApprove" package="adapter" visibility="public" xPosition="950.0" yPosition="1403.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="credit" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="float" name="credit"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getCredit" returnType="float" visibility="public"/>
+        <Method name="setCredit" returnType="void" visibility="public">
+          <Argument type="float" name="credit"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ZBankCreditAdaptee" package="adapter" visibility="public" xPosition="1172.0" yPosition="803.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="sendCreditRequest" returnType="BankCreditResponse" visibility="public">
+          <Argument type="BankCreditRequest" name="request"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="YBankCreditSender" package="adapter" visibility="public" xPosition="1335.0" yPosition="1583.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="sendCreditForValidate" returnType="void" visibility="public">
+          <Argument type="YBankCreditApprove" name="request"/>
+          <Argument type="YBankCreditSenderListener" name="listener"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="XBankCreditAPI" package="adapter" visibility="public" xPosition="133.0" yPosition="776.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="sendCreditRequest" returnType="XBankCreditResponse" visibility="public">
+          <Argument type="XBankCreditRequest" name="request"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="XBankCreditRequest" package="adapter" visibility="public" xPosition="44.0" yPosition="1239.0">
+      <Fields>
+        <Field name="customerName" type="String" visibility="private"/>
+        <Field name="requestAmount" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="customerName"/>
+          <Argument type="double" name="requestAmount"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCustomerName" returnType="String" visibility="public"/>
+        <Method name="setCustomerName" returnType="void" visibility="public">
+          <Argument type="String" name="customerName"/>
+        </Method>
+        <Method name="getRequestAmount" returnType="double" visibility="public"/>
+        <Method name="setRequestAmount" returnType="void" visibility="public">
+          <Argument type="double" name="requestAmount"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ZBankCreditResponse" package="adapter" visibility="public" xPosition="537.0" yPosition="1239.0">
+      <Fields>
+        <Field name="aproval" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="boolean" name="aproval"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="isAproval" returnType="boolean" visibility="public"/>
+        <Method name="setAproval" returnType="void" visibility="public">
+          <Argument type="boolean" name="aproval"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="XBankCreditAdaptee" package="adapter" visibility="public" xPosition="1100.0" yPosition="587.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="sendCreditRequest" returnType="BankCreditResponse" visibility="public">
+          <Argument type="BankCreditRequest" name="request"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="YBankCreditAdaptee" package="adapter" visibility="public" xPosition="1272.0" yPosition="1164.0">
+      <Fields>
+        <Field name="yresponse" type="YBankCreditApproveResult" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="sendCreditRequest" returnType="BankCreditResponse" visibility="public">
+          <Argument type="BankCreditRequest" name="request"/>
+        </Method>
+        <Method name="notifyCreditResult" returnType="void" visibility="public">
+          <Argument type="YBankCreditApproveResult" name="result"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BanksCreditFactory" package="adapter" visibility="public" xPosition="1244.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getBankCreditAdaptee" returnType="IBankAdapter" visibility="public" isStatic="true">
+          <Argument type="BANK" name="bank"/>
+        </Method>
+        <Method name="getBankCreditRequest" returnType="BankCreditRequest" visibility="public" isStatic="true"/>
+        <Method name="getBankCreditRequest" returnType="BankCreditRequest" visibility="public" isStatic="true">
+          <Argument type="String" name="name"/>
+          <Argument type="double" name="amount"/>
+        </Method>
+        <Method name="getBankCreditResponse" returnType="BankCreditResponse" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="ZBankCreditRejectedException" package="adapter" visibility="public" xPosition="352.0" yPosition="1488.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Adapter" package="adapter" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BankCreditResponse" package="adapter" visibility="public" xPosition="564.0" yPosition="462.0">
+      <Fields>
+        <Field name="approved" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="boolean" name="approved"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="isApproved" returnType="boolean" visibility="public"/>
+        <Method name="setApproved" returnType="void" visibility="public">
+          <Argument type="boolean" name="approved"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="YBankCreditSenderListener" package="adapter" visibility="public" xPosition="1335.0" yPosition="1437.0">
+      <Methods>
+        <Method name="notifyCreditResult" returnType="void" visibility="public">
+          <Argument type="YBankCreditApproveResult" name="result"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="IBankAdapter" package="adapter" visibility="public" xPosition="1627.0" yPosition="410.0">
+      <Methods>
+        <Method name="sendCreditRequest" returnType="BankCreditResponse" visibility="public">
+          <Argument type="BankCreditRequest" name="request"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="adapter.ZBankCreditAdaptee" target="adapter.BankCreditResponse" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="adapter.YBankCreditSenderListener" target="adapter.YBankCreditApprove" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="adapter.XBankCreditAPI" target="adapter.XBankCreditResponse" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="adapter.YBankCreditAdaptee" target="adapter.YBankCreditApprove" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="adapter.ZBankCreditAPI" target="adapter.BankCreditResponse" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="adapter.ZBankCreditResponse" target="adapter.ZBankCreditRequest" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="adapter.BanksCreditFactory" target="adapter.IBankAdapter" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="adapter.BanksCreditFactory" target="adapter.BankCreditResponse" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="adapter.YBankCreditSender" target="adapter.YBankCreditSender" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="adapter.XBankCreditAdaptee" target="adapter.IBankAdapter"/>
+    <HasRelation name="yresponse" source="adapter.YBankCreditAdaptee" target="adapter.YBankCreditApproveResult" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="adapter.XBankCreditAPI" target="adapter.BankCreditResponse" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="adapter.IBankAdapter" target="adapter.BankCreditResponse" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="adapter.YBankCreditAdaptee" target="adapter.IBankAdapter"/>
+    <UseRelation source="adapter.XBankCreditAdaptee" target="adapter.BankCreditResponse" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="adapter.ZBankCreditAdaptee" target="adapter.IBankAdapter"/>
+    <UseRelation source="adapter.BanksCreditFactory" target="adapter.BankCreditRequest" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="adapter.ZBankCreditResponse" target="adapter.ZBankCreditRejectedException" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="adapter.YBankCreditAdaptee" target="adapter.BankCreditResponse" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="adapter.YBankCreditAdaptee" target="adapter.YBankCreditSenderListener"/>
+    <UseRelation name="" source="adapter.XBankCreditAPI" target="adapter.XBankCreditRequest" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
